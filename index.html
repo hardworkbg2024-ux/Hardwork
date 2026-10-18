@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хард уърк ЕООД - Контейнери под наем & Кърти, Чисти, Извозва</title>
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0a58ca;
+            --accent: #0284c7;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-header:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(2, 132, 199, 0.8)), 
+                        url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform 0.2s, shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .features-list li {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Хард уърк <span>ЕООД</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+            <a href="tel:+359888888888" class="btn-header">📞 Заяви контейнер</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Бързо и професионално извозване на отпадъци</h1>
+            <p>Контейнери под наем за строителни и битови отпадъци. Пълно обслужване: къртане, почистване и извозване.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary">Поръчай веднага</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Нашите Услуги</h2>
+            <p>Надеждни решения за вашия дом, офис или строителен обект</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>📦 Контейнери под наем</h3>
+                <p>Отдаване на контейнери с различен обем за строителни и битови отпадъци. Бърза доставка до вашия адрес.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔨 Къртачни услуги</h3>
+                <p>Професионално къртане на бетон, тухла, фаянс и стари конструкции със специализирана техника.</p>
+            </div>
+            <div class="service-card">
+                <h3>🧹 Почистване и Извозване</h3>
+                <p>Почистване на мазета, тавани, дворове и строителни обекти. Извозване до лицензирани депа.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Защо да изберете „Хард уърк ЕООД“?</h2>
+                <p>Ние сме коректен партньор с дългогодишен опит в управлението на строителни и битови отпадъци. Разполагаме с със собствена техника и обучен екип.</p>
+                <ul class="features-list">
+                    <li>✓ Точност и спазване на уговорените срокове</li>
+                    <li>✓ Конкурентни цени без скрити такси</li>
+                    <li>✓ Законно извозване до регламентирани депа</li>
+                    <li>✓ Индивидуален подход към всеки клиент</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Хард уърк ЕООД" style="width: 100%; border-radius: 10px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Свържете се с нас</h3>
+                <p>Имате нужда от контейнер или услуга? Обадете ни се или изпратете запитване!</p>
+                <p><strong>📍 Адрес:</strong> България</p>
+                <p><strong>📞 Телефон:</strong> +359 88 888 8888</p>
+                <p><strong>✉️ Имейл:</strong> info@hardwork.bg</p>
+                <p><strong>🕒 Работно време:</strong> Пон - Съб: 08:00 - 18:00</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Вашето име" required>
+                    <input type="tel" placeholder="Телефон за връзка" required>
+                    <textarea rows="4" placeholder="Какъв контейнер или услуга ви трябва?" required></textarea>
+                    <button type="submit">Изпрати запитване</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Хард уърк ЕООД. Всички права запазени.</p>
+    </footer>
+
+</body>
+</html>
